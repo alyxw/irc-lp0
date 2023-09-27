@@ -5,7 +5,7 @@ from unidecode import unidecode
 
 class IRCClient(irc.client.SimpleIRCClient):
     def on_welcome(self, connection, event):
-        connection.join("#guestbook")
+        connection.join("#channel")
 
     def on_pubmsg(self, connection, event):
         now = datetime.now()
@@ -17,7 +17,7 @@ class IRCClient(irc.client.SimpleIRCClient):
 
 def main():
     client = IRCClient()
-    client.connect("zelazny.as21903.net", 6667, "irclp0")
+    client.connect("irc.example.com", 6667, "username")
     client.start()
 
 
